@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diagnóstico Diferencial Vascular do Membro Inferior</title>
+  <style>
+    :root {
+      --azulProfundo: #0b2740;
+      --azulMedio: #155e8a;
+      --azulClaro: #e8f4fb;
+      --verde: #16735a;
+      --verdeClaro: #e9f8f1;
+      --vermelho: #b42318;
+      --vermelhoClaro: #fff1ef;
+      --laranja: #c46512;
+      --laranjaClaro: #fff4e5;
+      --roxo: #6441a5;
+      --roxoClaro: #f2edff;
+      --amarelo: #ffdc5e;
+      --cinzaFundo: #f4f7fa;
+      --cinzaLinha: #d9e2ec;
+      --cinzaTexto: #44546a;
+      --texto: #17212b;
+      --branco: #ffffff;
+      --sombraLeve: 0 10px 24px rgba(11, 39, 64, 0.10);
+      --sombraMedia: 0 18px 42px rgba(11, 39, 64, 0.16);
+      --raio: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #eaf3f8 0%, #ffffff 36%, #f7fafc 100%);
+      color: var(--texto);
+      line-height: 1.6;
+    }
+
+    header {
+      color: var(--branco);
+      padding: 54px 22px 38px;
+      text-align: center;
+      background:
+        radial-gradient(circle at 10% 15%, rgba(255, 220, 94, 0.32), transparent 28%),
+        radial-gradient(circle at 90% 10%, rgba(64, 181, 230, 0.32), transparent 30%),
+        linear-gradient(135deg, var(--azulProfundo) 0%, var(--azulMedio) 58%, #073047 100%);
+    }
+
+    header h1 {
+      max-width: 1180px;
+      margin: 0 auto 14px;
+      font-size: clamp(2.2rem, 5vw, 5.2rem);
+      line-height: 1.02;
+      letter-spacing: -0.055em;
+    }
+
+    header p {
+      max-width: 980px;
+      margin: 0 auto;
+      font-size: clamp(1.08rem, 2vw, 1.42rem);
+      opacity: 0.96;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 12px;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--cinzaLinha);
+    }
+
+    nav a, .button {
+      border: 0;
+      border-radius: 999px;
+      padding: 10px 15px;
+      background: var(--azulProfundo);
+      color: var(--branco);
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 0.92rem;
+      cursor: pointer;
+      box-shadow: 0 6px 14px rgba(11, 39, 64, 0.16);
+    }
+
+    nav a:hover, .button:hover {
+      background: var(--azulMedio);
+    }
+
+    main {
+      max-width: 1260px;
+      margin: 0 auto;
+      padding: 28px 18px 84px;
+    }
+
+    section {
+      margin: 44px 0;
+      scroll-margin-top: 90px;
+    }
+
+    .sectionTitle {
+      font-size: clamp(1.9rem, 3.2vw, 3.15rem);
+      line-height: 1.08;
+      margin: 0 0 12px;
+      color: var(--azulProfundo);
+      letter-spacing: -0.04em;
+    }
+
+    .lead {
+      max-width: 1000px;
+      margin: 0 0 22px;
+      font-size: 1.2rem;
+      color: var(--cinzaTexto);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+
+    .gridWide {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--branco);
+      border: 1px solid var(--cinzaLinha);
+      border-radius: var(--raio);
+      padding: 22px;
+      box-shadow: var(--sombraLeve);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 8px;
+      background: var(--azulMedio);
+    }
+
+    .card h3 {
+      margin: 8px 0 8px;
+      font-size: 1.42rem;
+      color: var(--azulProfundo);
+      line-height: 1.18;
+    }
+
+    .card p {
+      margin: 8px 0;
+    }
+
+    .card ul, .card ol {
+      margin: 10px 0 0;
+      padding-left: 22px;
+    }
+
+    .card li {
+      margin: 7px 0;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin: 4px 0 8px;
+    }
+
+    .tagRed { background: var(--vermelhoClaro); color: var(--vermelho); }
+    .tagBlue { background: var(--azulClaro); color: var(--azulProfundo); }
+    .tagGreen { background: var(--verdeClaro); color: var(--verde); }
+    .tagOrange { background: var(--laranjaClaro); color: var(--laranja); }
+    .tagPurple { background: var(--roxoClaro); color: var(--roxo); }
+    .tagYellow { background: #fff7c9; color: #755300; }
+
+    .heroQuestion {
+      background: linear-gradient(135deg, #ffffff 0%, #e7f4fb 100%);
+      border: 3px solid var(--azulProfundo);
+      border-radius: 34px;
+      padding: 34px;
+      box-shadow: var(--sombraMedia);
+      margin: 20px 0 24px;
+    }
+
+    .heroQuestion h2 {
+      margin: 0;
+      font-size: clamp(2.1rem, 5vw, 5.1rem);
+      line-height: 1.02;
+      color: var(--azulProfundo);
+      letter-spacing: -0.055em;
+    }
+
+    .heroQuestion p {
+      margin: 16px 0 0;
+      max-width: 1040px;
+      font-size: clamp(1.08rem, 2vw, 1.42rem);
+      color: var(--cinzaTexto);
+    }
+
+    .clinicalPearl {
+      border-left: 10px solid var(--amarelo);
+      background: #fffbea;
+      border-radius: 18px;
+      padding: 15px 18px;
+      margin-top: 14px;
+      font-weight: 700;
+    }
+
+    .danger {
+      border-left: 10px solid var(--vermelho);
+      background: var(--vermelhoClaro);
+    }
+
+    .decision {
+      border-left: 10px solid var(--laranja);
+      background: var(--laranjaClaro);
+    }
+
+    .safe {
+      border-left: 10px solid var(--verde);
+      background: var(--verdeClaro);
+    }
+
+    .info {
+      border-left: 10px solid var(--azulMedio);
+      background: var(--azulClaro);
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      margin: 20px 0;
+    }
+
+    .step {
+      background: var(--branco);
+      border: 2px solid var(--cinzaLinha);
+      border-radius: 26px;
+      padding: 22px;
+      min-height: 180px;
+      text-align: center;
+      box-shadow: var(--sombraLeve);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .stepNumber {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--azulProfundo);
+      color: var(--branco);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 12px;
+      font-weight: 900;
+      font-size: 1.35rem;
+    }
+
+    .step strong {
+      display: block;
+      color: var(--azulProfundo);
+      font-size: 1.22rem;
+      margin-bottom: 6px;
+    }
+
+    .questionLine {
+      font-size: clamp(1.5rem, 2.8vw, 2.2rem);
+      line-height: 1.1;
+      font-weight: 900;
+      color: var(--azulProfundo);
+      letter-spacing: -0.035em;
+      margin: 8px 0 14px;
+    }
+
+    .miniTitle {
+      margin: 18px 0 8px;
+      color: var(--azulProfundo);
+      font-weight: 900;
+      font-size: 1.05rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .answer {
+      display: none;
+      margin-top: 16px;
+      padding: 16px;
+      border-radius: 18px;
+      background: #f8fbfd;
+      border: 1px solid var(--cinzaLinha);
+    }
+
+    .answer.visible {
+      display: block;
+    }
+
+    .buttonSmall {
+      border: 0;
+      border-radius: 14px;
+      padding: 10px 13px;
+      background: var(--azulProfundo);
+      color: var(--branco);
+      font-weight: 900;
+      cursor: pointer;
+      margin-top: 12px;
+    }
+
+    .buttonSmall:hover {
+      background: var(--azulMedio);
+    }
+
+    .imageSlot {
+      border: 3px dashed #91a9bd;
+      border-radius: 24px;
+      background: linear-gradient(135deg, #f8fbfd 0%, #edf5fa 100%);
+      min-height: 210px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      color: #536b80;
+      font-weight: 900;
+      font-size: 1.15rem;
+    }
+
+    .imageSlot small {
+      display: block;
+      font-weight: 700;
+      margin-top: 8px;
+      color: #6c7f91;
+    }
+
+    .compareTable {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--branco);
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: var(--sombraLeve);
+      font-size: 0.98rem;
+    }
+
+    .compareTable th {
+      background: var(--azulProfundo);
+      color: var(--branco);
+      padding: 14px;
+      text-align: left;
+    }
+
+    .compareTable td {
+      padding: 13px 14px;
+      border-bottom: 1px solid var(--cinzaLinha);
+      vertical-align: top;
+    }
+
+    .compareTable tr:nth-child(even) td {
+      background: #f8fbfd;
+    }
+
+    .pillList {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 12px 0;
+    }
+
+    .pillList span {
+      border-radius: 999px;
+      padding: 9px 12px;
+      background: var(--branco);
+      border: 1px solid var(--cinzaLinha);
+      box-shadow: 0 4px 12px rgba(11, 39, 64, 0.07);
+      font-weight: 800;
+    }
+
+    .twoColumns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .checklist li {
+      list-style: none;
+      position: relative;
+      padding-left: 30px;
+    }
+
+    .checklist li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--verdeClaro);
+      color: var(--verde);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+    }
+
+    footer {
+      text-align: center;
+      color: #5f7182;
+      padding: 30px;
+      border-top: 1px solid var(--cinzaLinha);
+      background: var(--branco);
+    }
+
+    @media (max-width: 850px) {
+      nav {
+        position: static;
+      }
+
+      .twoColumns {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media print {
+      nav, .button, .buttonSmall {
+        display: none;
+      }
+
+      body {
+        background: #ffffff;
+      }
+
+      .card, .heroQuestion, .step, .compareTable {
+        box-shadow: none;
+        break-inside: avoid;
+      }
+
+      .answer {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header id="topo">
+    <h1>Diagnóstico Diferencial das Doenças Vasculares do Membro Inferior</h1>
+    <p>Material de apoio para aula e revisão. O objetivo é transformar imagens, sinais e sintomas em raciocínio clínico seguro, progressivo e aplicável à prática médica.</p>
+  </header>
+
+  <nav aria-label="Navegação principal">
+    <a href="#comoUsar">Como usar</a>
+    <a href="#diagnosticos">Tipos de diagnóstico</a>
+    <a href="#funil">Funil</a>
+    <a href="#gravidade">Gravidade</a>
+    <a href="#sindromes">Síndromes</a>
+    <a href="#territorios">Territórios</a>
+    <a href="#etiologias">Etiologias</a>
+    <a href="#ulceras">Úlceras</a>
+    <a href="#erros">Erros a evitar</a>
+    <a href="#atividade">Atividade</a>
+    <button class="button" onclick="window.print()">Imprimir</button>
+  </nav>
+
+  <main>
+    <section id="diagnosticos">
+      <h2 class="sectionTitle">0. Como nomear o diagnóstico</h2>
+      <p class="lead">Antes de chegar ao nome final da doença, o estudante deve compreender que o diagnóstico clínico pode ser construído em camadas. Essa organização evita conclusões precipitadas e melhora a segurança da conduta.</p>
+
+      <div class="heroQuestion info">
+        <h2>Nem todo diagnóstico começa pelo nome da doença.</h2>
+        <p>Primeiro descrevemos a síndrome, depois localizamos o território anatômico, em seguida procuramos a causa. Quando a causa não pode ser definida, registramos o diagnóstico nosológico, isto é, o nome da doença reconhecida pela clínica e pelos exames.</p>
+      </div>
+
+      <div class="gridWide">
+        <div class="card info">
+          <span class="tag tagBlue">Diagnóstico sindrômico</span>
+          <h3>Qual é o padrão clínico?</h3>
+          <p>É a primeira organização do caso. Agrupa sinais e sintomas em uma síndrome clínica.</p>
+          <div class="miniTitle">Exemplos no membro inferior</div>
+          <ul>
+            <li>Síndrome da perna inchada aguda.</li>
+            <li>Síndrome da perna inchada crônica.</li>
+            <li>Síndrome do pé frio e doloroso.</li>
+            <li>Síndrome ulcerosa do membro inferior.</li>
+            <li>Síndrome infecciosa do pé diabético.</li>
+          </ul>
+        </div>
+
+        <div class="card info">
+          <span class="tag tagBlue">Diagnóstico anatômico</span>
+          <h3>Onde está o problema?</h3>
+          <p>Localiza o território predominante acometido. Essa etapa direciona o exame físico e os exames complementares.</p>
+          <div class="miniTitle">Territórios principais</div>
+          <ul>
+            <li>Arterial.</li>
+            <li>Venoso.</li>
+            <li>Linfático.</li>
+            <li>Neuropático.</li>
+            <li>Cutâneo e partes moles.</li>
+            <li>Osteoarticular.</li>
+          </ul>
+        </div>
+
+        <div class="card decision">
+          <span class="tag tagOrange">Diagnóstico etiológico</span>
+          <h3>Qual é a causa?</h3>
+          <p>Define o mecanismo causal do quadro. É o diagnóstico mais completo quando é possível estabelecer a origem do problema.</p>
+          <div class="miniTitle">Exemplos de etiologia</div>
+          <ul>
+            <li>Aterosclerótica.</li>
+            <li>Trombótica.</li>
+            <li>Embólica.</li>
+            <li>Infecciosa.</li>
+            <li>Traumática.</li>
+            <li>Inflamatória ou autoimune.</li>
+            <li>Metabólica, como diabetes mellitus.</li>
+            <li>Congênita ou genética.</li>
+          </ul>
+        </div>
+
+        <div class="card safe">
+          <span class="tag tagGreen">Diagnóstico nosológico</span>
+          <h3>Qual é o nome da doença?</h3>
+          <p>Quando não é possível definir com segurança a etiologia, registra-se o diagnóstico nosológico. Ele nomeia a entidade clínica reconhecida.</p>
+          <div class="miniTitle">Exemplos</div>
+          <ul>
+            <li>Doença arterial periférica.</li>
+            <li>Trombose venosa profunda.</li>
+            <li>Insuficiência venosa crônica.</li>
+            <li>Linfedema.</li>
+            <li>Pé diabético.</li>
+            <li>Úlcera venosa.</li>
+            <li>Úlcera arterial.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="clinicalPearl">
+        Observação terminológica. Para esse contexto, o termo correto é diagnóstico nosológico. Posológico refere-se à dose, frequência e forma de uso de medicamentos.
+      </div>
+    </section>
+
+    <section id="comoUsar">
+      <div class="heroQuestion">
+        <h2>Antes de diagnosticar, descreva.</h2>
+        <p>O aluno deve primeiro observar, depois organizar, depois formular hipóteses. Esta página foi construída para apoiar esse caminho.</p>
+      </div>
+
+      <div class="gridWide">
+        <div class="card info">
+          <span class="tag tagBlue">Instrução ao aluno</span>
+          <h3>Como estudar por esta página</h3>
+          <ol class="checklist">
+            <li>Observe a imagem clínica ou a vinheta.</li>
+            <li>Descreva localização, cor, edema, dor, temperatura, pulsos e sensibilidade.</li>
+            <li>Identifique se há risco de morte ou perda do membro.</li>
+            <li>Classifique a síndrome predominante.</li>
+            <li>Defina o território anatômico principal.</li>
+            <li>Liste hipóteses e escolha o diagnóstico mais provável.</li>
+          </ol>
+        </div>
+
+        <div class="card decision">
+          <span class="tag tagOrange">Instrução ao professor</span>
+          <h3>Como conduzir a discussão</h3>
+          <ol>
+            <li>Mostre uma imagem por vez.</li>
+            <li>Peça descrição objetiva antes de qualquer diagnóstico.</li>
+            <li>Interrompa respostas precipitadas e retorne ao exame físico.</li>
+            <li>Use o funil diagnóstico em todos os casos.</li>
+            <li>Finalize cada caso com a decisão clínica inicial.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="gridWide" style="margin-top:18px;">
+        <div class="imageSlot">Inserir imagem 1<br><small>Edema unilateral agudo</small></div>
+        <div class="imageSlot">Inserir imagem 2<br><small>Pé frio, pálido ou cianótico</small></div>
+        <div class="imageSlot">Inserir imagem 3<br><small>Úlcera maleolar medial</small></div>
+        <div class="imageSlot">Inserir imagem 4<br><small>Úlcera plantar em paciente diabético</small></div>
+      </div>
+    </section>
+
+    <section id="funil">
+      <h2 class="sectionTitle">1. O funil diagnóstico</h2>
+      <p class="lead">Use este caminho em todos os casos. Ele evita a memorização superficial e força o estudante a raciocinar com prioridade clínica.</p>
+
+      <div class="flow">
+        <div class="step">
+          <div class="stepNumber">1</div>
+          <strong>Gravidade</strong>
+          <span>Existe risco imediato de morte, amputação ou perda funcional?</span>
+        </div>
+        <div class="step">
+          <div class="stepNumber">2</div>
+          <strong>Síndrome</strong>
+          <span>Dor, edema, ferida, alteração de cor, temperatura ou pulso?</span>
+        </div>
+        <div class="step">
+          <div class="stepNumber">3</div>
+          <strong>Território</strong>
+          <span>Arterial, venoso, linfático, neuropático, infeccioso ou osteoarticular?</span>
+        </div>
+        <div class="step">
+          <div class="stepNumber">4</div>
+          <strong>Etiologia</strong>
+          <span>Congênita, traumática, infecciosa, inflamatória, metabólica ou degenerativa?</span>
+        </div>
+        <div class="step">
+          <div class="stepNumber">5</div>
+          <strong>Diagnóstico</strong>
+          <span>Qual doença específica explica melhor o conjunto dos achados?</span>
+        </div>
+      </div>
+
+      <div class="clinicalPearl">
+        Pérola clínica. O diagnóstico diferencial correto não começa pela lista de doenças. Começa pela definição do problema dominante.
+      </div>
+    </section>
+
+    <section id="gravidade">
+      <h2 class="sectionTitle">2. Primeiro filtro, gravidade</h2>
+      <p class="lead">Antes de refinar hipóteses, o estudante deve reconhecer as situações que exigem decisão imediata.</p>
+
+      <div class="heroQuestion danger">
+        <h2>Qual diagnóstico não pode esperar?</h2>
+        <p>Procure sinais de isquemia, infecção sistêmica, sangramento, síndrome compartimental ou trombose venosa maciça.</p>
+      </div>
+
+      <div class="gridWide">
+        <div class="card danger">
+          <span class="tag tagRed">Ameaça ao membro</span>
+          <h3>Sinais de alarme vascular</h3>
+          <ul>
+            <li>Dor súbita e intensa.</li>
+            <li>Pé frio, pálido ou cianótico.</li>
+            <li>Ausência de pulso distal.</li>
+            <li>Parestesia ou perda de força.</li>
+            <li>Necrose, gangrena ou progressão rápida da lesão.</li>
+          </ul>
+        </div>
+
+        <div class="card danger">
+          <span class="tag tagRed">Ameaça à vida</span>
+          <h3>Sinais de alarme sistêmico</h3>
+          <ul>
+            <li>Febre, hipotensão ou confusão mental.</li>
+            <li>Celulite extensa ou infecção profunda.</li>
+            <li>Ferida com secreção purulenta e toxemia.</li>
+            <li>Dispneia associada a suspeita de TVP.</li>
+            <li>Sangramento ativo ou hematoma expansivo.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card decision" style="margin-top:18px;">
+        <span class="tag tagOrange">Decisão inicial</span>
+        <h3>O que muda a conduta imediatamente?</h3>
+        <div class="pillList">
+          <span>Internar</span>
+          <span>Acionar vascular</span>
+          <span>Antibioticoterapia</span>
+          <span>Anticoagulação</span>
+          <span>Revascularização</span>
+          <span>Desbridamento</span>
+          <span>Controle de sangramento</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="sindromes">
+      <h2 class="sectionTitle">3. Síndromes clínicas do membro inferior</h2>
+      <p class="lead">Cada card apresenta uma porta de entrada comum no atendimento. A revisão deve sempre responder: qual diagnóstico é mais provável e qual diagnóstico é mais perigoso?</p>
+
+      <div class="gridWide">
+        <div class="card">
+          <span class="tag tagBlue">Síndrome 1</span>
+          <h3>Perna inchada aguda</h3>
+          <div class="questionLine">É TVP, celulite, trauma ou rotura de cisto?</div>
+          <div class="miniTitle">Perguntas essenciais</div>
+          <ul>
+            <li>O edema é unilateral?</li>
+            <li>Há dor na panturrilha ou empastamento?</li>
+            <li>Houve cirurgia, imobilização, câncer ou viagem prolongada?</li>
+            <li>Há febre, rubor difuso ou porta de entrada?</li>
+          </ul>
+          <button class="buttonSmall" onclick="toggleAnswer('a1')">Mostrar raciocínio</button>
+          <div id="a1" class="answer">
+            <p><strong>Hipóteses principais:</strong> trombose venosa profunda, celulite, erisipela, trauma muscular, rotura de cisto de Baker e linfangite.</p>
+            <p><strong>Exame útil:</strong> ultrassom Doppler venoso quando houver suspeita de TVP.</p>
+            <p><strong>Erro comum:</strong> tratar todo edema doloroso como infecção sem avaliar trombose.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="tag tagBlue">Síndrome 2</span>
+          <h3>Perna inchada crônica</h3>
+          <div class="questionLine">É venoso, linfático, sistêmico ou medicamentoso?</div>
+          <div class="miniTitle">Perguntas essenciais</div>
+          <ul>
+            <li>O edema piora ao final do dia?</li>
+            <li>Melhora com elevação?</li>
+            <li>Há varizes, hiperpigmentação ou eczema?</li>
+            <li>O edema é duro, persistente e assimétrico?</li>
+          </ul>
+          <button class="buttonSmall" onclick="toggleAnswer('a2')">Mostrar raciocínio</button>
+          <div id="a2" class="answer">
+            <p><strong>Venoso:</strong> peso, varizes, edema vespertino, hiperpigmentação e úlcera medial.</p>
+            <p><strong>Linfático:</strong> edema crônico, pele espessada, fibrose, sinal de Stemmer positivo e infecções recorrentes.</p>
+            <p><strong>Sistêmico:</strong> edema bilateral associado a insuficiência cardíaca, renal, hepática ou medicamentos.</p>
+          </div>
+        </div>
+
+        <div class="card danger">
+          <span class="tag tagRed">Síndrome 3</span>
+          <h3>Pé frio e doloroso</h3>
+          <div class="questionLine">Existe isquemia ameaçando o membro?</div>
+          <div class="miniTitle">Perguntas essenciais</div>
+          <ul>
+            <li>A dor começou de forma súbita?</li>
+            <li>O membro está frio ou pálido?</li>
+            <li>Há pulso palpável?</li>
+            <li>Há parestesia ou perda de força?</li>
+          </ul>
+          <button class="buttonSmall" onclick="toggleAnswer('a3')">Mostrar raciocínio</button>
+          <div id="a3" class="answer">
+            <p><strong>Seis sinais clássicos:</strong> dor, palidez, ausência de pulso, parestesia, paralisia e frialdade.</p>
+            <p><strong>Hipóteses principais:</strong> embolia arterial, trombose arterial aguda, trauma arterial e isquemia crítica avançada.</p>
+            <p><strong>Conduta didática:</strong> reconhecer emergência e encaminhar para avaliação vascular imediata.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="tag tagGreen">Síndrome 4</span>
+          <h3>Dor ao caminhar</h3>
+          <div class="questionLine">Claudicação vascular ou dor neurogênica?</div>
+          <div class="miniTitle">Perguntas essenciais</div>
+          <ul>
+            <li>A dor aparece sempre após distância semelhante?</li>
+            <li>Melhora rapidamente com repouso?</li>
+            <li>Há pulsos reduzidos?</li>
+            <li>Há dor lombar ou melhora ao flexionar o tronco?</li>
+          </ul>
+          <button class="buttonSmall" onclick="toggleAnswer('a4')">Mostrar raciocínio</button>
+          <div id="a4" class="answer">
+            <p><strong>Claudicação vascular:</strong> dor reprodutível ao esforço, melhora com repouso, fatores de risco cardiovascular e pulsos reduzidos.</p>
+            <p><strong>Dor neurogênica:</strong> pode melhorar ao sentar ou inclinar o tronco para frente, frequentemente associada a sintomas lombares.</p>
+            <p><strong>Exame útil:</strong> índice tornozelo braquial e Doppler arterial.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="tag tagPurple">Síndrome 5</span>
+          <h3>Úlcera no tornozelo</h3>
+          <div class="questionLine">É venosa, arterial, mista ou vasculítica?</div>
+          <div class="miniTitle">Perguntas essenciais</div>
+          <ul>
+            <li>Está na região maleolar medial?</li>
+            <li>É dolorosa ou pouco dolorosa?</li>
+            <li>Tem exsudato e bordas irregulares?</li>
+            <li>Os pulsos estão presentes?</li>
+          </ul>
+          <button class="buttonSmall" onclick="toggleAnswer('a5')">Mostrar raciocínio</button>
+          <div id="a5" class="answer">
+            <p><strong>Venosa:</strong> úlcera medial, exsudativa, bordas irregulares, edema, varizes e hiperpigmentação.</p>
+            <p><strong>Mista:</strong> sinais venosos com dor importante, necrose seca ou pulsos reduzidos.</p>
+            <p><strong>Erro crítico:</strong> compressão intensa sem avaliar perfusão arterial.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="tag tagOrange">Síndrome 6</span>
+          <h3>Úlcera plantar no diabético</h3>
+          <div class="questionLine">É neuropática, isquêmica, infectada ou osteomielite?</div>
+          <div class="miniTitle">Perguntas essenciais</div>
+          <ul>
+            <li>Há perda de sensibilidade?</li>
+            <li>A lesão está em área de pressão?</li>
+            <li>Há calosidade ou deformidade?</li>
+            <li>Há secreção, odor, febre ou osso exposto?</li>
+          </ul>
+          <button class="buttonSmall" onclick="toggleAnswer('a6')">Mostrar raciocínio</button>
+          <div id="a6" class="answer">
+            <p><strong>Neuropática:</strong> indolor, plantar, associada a calosidade e perda de sensibilidade.</p>
+            <p><strong>Isquêmica:</strong> dolorosa, distal, pele fria, pulsos reduzidos, necrose seca.</p>
+            <p><strong>Infectada:</strong> rubor, calor, secreção, odor, dor nova ou sinais sistêmicos.</p>
+            <p><strong>Não esquecer:</strong> retirar carga, avaliar perfusão e investigar osteomielite quando houver ferida profunda ou osso exposto.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <span class="tag tagRed">Síndrome 7</span>
+          <h3>Perna vermelha e quente</h3>
+          <div class="questionLine">É infecção, tromboflebite, TVP ou artrite?</div>
+          <div class="miniTitle">Perguntas essenciais</div>
+          <ul>
+            <li>Há febre?</li>
+            <li>O rubor é difuso ou segue trajeto venoso?</li>
+            <li>Existe cordão endurecido e doloroso?</li>
+            <li>A dor está em articulação?</li>
+          </ul>
+          <button class="buttonSmall" onclick="toggleAnswer('a7')">Mostrar raciocínio</button>
+          <div id="a7" class="answer">
+            <p><strong>Tromboflebite superficial:</strong> cordão venoso endurecido, doloroso e hiperemiado.</p>
+            <p><strong>Celulite ou erisipela:</strong> rubor difuso, calor, dor cutânea, febre e porta de entrada.</p>
+            <p><strong>Confundidores:</strong> gota, artrite, trauma e TVP com sinais inflamatórios.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="territorios">
+      <h2 class="sectionTitle">4. Territórios anatômicos e pistas clínicas</h2>
+      <p class="lead">Depois da síndrome, o aluno deve localizar o sistema predominante. Essa etapa reduz a lista de diagnósticos e direciona os exames.</p>
+
+      <div class="gridWide">
+        <div class="card">
+          <span class="tag tagRed">Arterial</span>
+          <h3>Quando pensar em artéria?</h3>
+          <ul>
+            <li>Pé frio, pálido ou cianótico.</li>
+            <li>Pulsos reduzidos ou ausentes.</li>
+            <li>Dor ao caminhar ou dor em repouso.</li>
+            <li>Úlcera distal, seca e dolorosa.</li>
+            <li>Necrose seca em dedos.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <span class="tag tagBlue">Venoso</span>
+          <h3>Quando pensar em veia?</h3>
+          <ul>
+            <li>Edema, peso e cansaço nas pernas.</li>
+            <li>Varizes e piora ao final do dia.</li>
+            <li>Hiperpigmentação e eczema venoso.</li>
+            <li>Úlcera maleolar medial.</li>
+            <li>Edema unilateral agudo com suspeita de TVP.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <span class="tag tagGreen">Linfático</span>
+          <h3>Quando pensar em linfa?</h3>
+          <ul>
+            <li>Edema crônico, progressivo e persistente.</li>
+            <li>Pele espessada ou endurecida.</li>
+            <li>Infecções cutâneas recorrentes.</li>
+            <li>História de cirurgia, radioterapia ou filariose.</li>
+            <li>Sinal de Stemmer positivo.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <span class="tag tagOrange">Neuropático</span>
+          <h3>Quando pensar em neuropatia?</h3>
+          <ul>
+            <li>Diabetes de longa duração.</li>
+            <li>Perda de sensibilidade protetora.</li>
+            <li>Úlcera plantar indolor.</li>
+            <li>Calosidade e deformidade.</li>
+            <li>Pé de Charcot.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="etiologias">
+      <h2 class="sectionTitle">5. Categorias etiológicas amplas</h2>
+      <p class="lead">Esta seção ajuda o aluno a entender a causa do quadro, não apenas o nome da doença.</p>
+
+      <div class="grid">
+        <div class="card"><span class="tag tagPurple">Congênita</span><h3>Começou cedo?</h3><p>Linfedema primário, malformações vasculares e síndromes genéticas. Pergunte sobre início na infância, adolescência e história familiar.</p></div>
+        <div class="card"><span class="tag tagOrange">Traumática</span><h3>Houve acidente?</h3><p>Lesão arterial, lesão venosa, pseudoaneurisma, fístula arteriovenosa, trombose pós trauma e síndrome compartimental.</p></div>
+        <div class="card"><span class="tag tagRed">Infecciosa</span><h3>Há febre ou secreção?</h3><p>Celulite, erisipela, linfangite, pé diabético infectado, osteomielite e infecção necrosante de partes moles.</p></div>
+        <div class="card"><span class="tag tagBlue">Inflamatória</span><h3>Há doença sistêmica?</h3><p>Vasculites, síndrome antifosfolípide, livedo vasculopática e úlceras associadas a doenças reumatológicas.</p></div>
+        <div class="card"><span class="tag tagGreen">Degenerativa</span><h3>Há aterosclerose?</h3><p>Doença arterial periférica, aneurismas periféricos e degeneração venosa com varizes. Avalie idade, tabagismo e risco cardiovascular.</p></div>
+        <div class="card"><span class="tag tagYellow">Metabólica</span><h3>Há diabetes ou obesidade?</h3><p>Pé diabético, neuropatia, doença arterial periférica, dislipidemia e linfedema associado à obesidade.</p></div>
+        <div class="card"><span class="tag tagPurple">Neoplásica</span><h3>Há câncer?</h3><p>TVP associada a câncer, síndrome de Trousseau e compressão venosa ou linfática por tumores.</p></div>
+        <div class="card"><span class="tag tagOrange">Fatores externos</span><h3>Há fator precipitante?</h3><p>Tabagismo, anticoncepcional, imobilização, viagem prolongada, medicamentos, pós operatório e exposição ao frio.</p></div>
+        <div class="card"><span class="tag tagBlue">Funcional ou idiopática</span><h3>O estrutural foi excluído?</h3><p>Edema idiopático, acrocianose, Raynaud primário e dor funcional. Só considerar após excluir causas graves.</p></div>
+      </div>
+    </section>
+
+    <section id="ulceras">
+      <h2 class="sectionTitle">6. Matriz didática das úlceras</h2>
+      <p class="lead">Ao analisar uma úlcera, descreva localização, dor, borda, fundo, exsudato, pele ao redor, pulso e sensibilidade. A conduta depende dessa classificação.</p>
+
+      <table class="compareTable">
+        <thead>
+          <tr>
+            <th>Tipo</th>
+            <th>Local</th>
+            <th>Dor</th>
+            <th>Pistas</th>
+            <th>Erro crítico</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Venosa</strong></td>
+            <td>Maleolar medial</td>
+            <td>Leve ou moderada</td>
+            <td>Exsudato, edema, varizes, bordas irregulares.</td>
+            <td>Tratar apenas a ferida.</td>
+          </tr>
+          <tr>
+            <td><strong>Arterial</strong></td>
+            <td>Dedos, calcâneo, proeminências</td>
+            <td>Importante</td>
+            <td>Fundo seco, pele fria, pulsos reduzidos.</td>
+            <td>Compressão sem avaliar perfusão.</td>
+          </tr>
+          <tr>
+            <td><strong>Neuropática</strong></td>
+            <td>Plantar, pontos de pressão</td>
+            <td>Ausente ou discreta</td>
+            <td>Calosidade, deformidade, perda sensitiva.</td>
+            <td>Não retirar carga.</td>
+          </tr>
+          <tr>
+            <td><strong>Mista</strong></td>
+            <td>Perna ou tornozelo</td>
+            <td>Variável</td>
+            <td>Sinais venosos com componente isquêmico.</td>
+            <td>Conduta de úlcera venosa pura.</td>
+          </tr>
+          <tr>
+            <td><strong>Vasculítica</strong></td>
+            <td>Múltiplos locais</td>
+            <td>Importante</td>
+            <td>Púrpura, necrose, doença sistêmica.</td>
+            <td>Atrasar investigação imunológica.</td>
+          </tr>
+          <tr>
+            <td><strong>Pressão</strong></td>
+            <td>Proeminências ósseas</td>
+            <td>Variável</td>
+            <td>Imobilidade, desnutrição, déficit neurológico.</td>
+            <td>Não aliviar pressão.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="clinicalPearl">
+        Regra prática. Úlcera não é apenas ferida. É manifestação cutânea de uma doença de base.
+      </div>
+    </section>
+
+    <section id="exames">
+      <h2 class="sectionTitle">7. Exames complementares que mudam a conduta</h2>
+      <p class="lead">O exame deve responder a uma pergunta clínica objetiva. Evite solicitar exames sem saber qual decisão será tomada com o resultado.</p>
+
+      <div class="gridWide">
+        <div class="card info">
+          <span class="tag tagBlue">Doppler venoso</span>
+          <h3>Quando usar?</h3>
+          <p>Suspeita de TVP, edema unilateral agudo, dor em panturrilha e avaliação de refluxo venoso em insuficiência venosa crônica.</p>
+        </div>
+        <div class="card info">
+          <span class="tag tagBlue">ITB</span>
+          <h3>Quando usar?</h3>
+          <p>Suspeita de doença arterial periférica, claudicação, úlcera arterial, úlcera mista e antes de compressão terapêutica.</p>
+        </div>
+        <div class="card info">
+          <span class="tag tagBlue">Doppler arterial</span>
+          <h3>Quando usar?</h3>
+          <p>Suspeita de estenose arterial, isquemia crônica, avaliação de pulsos reduzidos e planejamento de encaminhamento vascular.</p>
+        </div>
+        <div class="card info">
+          <span class="tag tagBlue">Imagem óssea</span>
+          <h3>Quando usar?</h3>
+          <p>Suspeita de osteomielite, pé de Charcot, ferida profunda, osso exposto ou deformidade progressiva no pé diabético.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="erros">
+      <h2 class="sectionTitle">8. Dez erros a evitar pelo médico generalista</h2>
+      <p class="lead">Esses erros são frequentes na atenção primária, em ambulatórios gerais e em serviços de urgência. A lista deve ser revisada antes de conduzir pacientes com dor, edema, feridas, alterações de cor ou suspeita de doença vascular nos membros inferiores.</p>
+
+      <div class="gridWide">
+        <div class="card danger">
+          <span class="tag tagRed">Erro 1</span>
+          <h3>Não palpar os pulsos</h3>
+          <p>Todo paciente com dor, ferida, necrose, diabetes ou suspeita de doença vascular deve ter pulsos femoral, poplíteo, tibial posterior e pedioso avaliados, quando possível.</p>
+        </div>
+
+        <div class="card danger">
+          <span class="tag tagRed">Erro 2</span>
+          <h3>Comprimir úlcera sem avaliar perfusão</h3>
+          <p>Compressão é fundamental na úlcera venosa, mas pode ser perigosa se houver isquemia arterial importante. Avalie pulsos e considere ITB antes de compressão terapêutica intensa.</p>
+        </div>
+
+        <div class="card danger">
+          <span class="tag tagRed">Erro 3</span>
+          <h3>Tratar pé diabético como ferida simples</h3>
+          <p>No pé diabético, sempre avaliar três dimensões: neuropatia, isquemia e infecção. Uma lesão pequena pode esconder infecção profunda, osteomielite ou risco de amputação.</p>
+        </div>
+
+        <div class="card danger">
+          <span class="tag tagRed">Erro 4</span>
+          <h3>Ignorar sinais de isquemia aguda</h3>
+          <p>Dor súbita, frialdade, palidez, ausência de pulso, parestesia ou perda de força exigem reconhecimento imediato. Atrasar o encaminhamento pode resultar em perda do membro.</p>
+        </div>
+
+        <div class="card danger">
+          <span class="tag tagRed">Erro 5</span>
+          <h3>Confundir TVP com celulite sem raciocínio diferencial</h3>
+          <p>Edema unilateral agudo com dor em panturrilha, cirurgia recente, imobilização, câncer ou uso de hormônios deve levantar suspeita de trombose venosa profunda.</p>
+        </div>
+
+        <div class="card decision">
+          <span class="tag tagOrange">Erro 6</span>
+          <h3>Prescrever antibiótico para toda úlcera crônica</h3>
+          <p>Úlcera colonizada não é sinônimo de úlcera infectada. Antibiótico deve ser reservado para sinais clínicos de infecção, como celulite, secreção purulenta, dor progressiva, febre ou repercussão sistêmica.</p>
+        </div>
+
+        <div class="card decision">
+          <span class="tag tagOrange">Erro 7</span>
+          <h3>Não retirar carga da úlcera neuropática</h3>
+          <p>Curativo isolado não cicatriza úlcera plantar se a pressão continuar atuando sobre a lesão. A retirada de carga é parte essencial do tratamento.</p>
+        </div>
+
+        <div class="card decision">
+          <span class="tag tagOrange">Erro 8</span>
+          <h3>Não investigar osteomielite quando indicada</h3>
+          <p>Ferida profunda, exposição óssea, recorrência, falha de cicatrização ou infecção persistente devem levantar suspeita de osteomielite, especialmente no paciente diabético.</p>
+        </div>
+
+        <div class="card decision">
+          <span class="tag tagOrange">Erro 9</span>
+          <h3>Tratar varizes apenas como problema estético</h3>
+          <p>Varizes podem fazer parte da insuficiência venosa crônica. Edema, dor, eczema, hiperpigmentação, lipodermatoesclerose e úlcera indicam doença funcionalmente relevante.</p>
+        </div>
+
+        <div class="card decision">
+          <span class="tag tagOrange">Erro 10</span>
+          <h3>Encaminhar tarde demais</h3>
+          <p>Encaminhamento vascular deve ser precoce quando houver dor em repouso, necrose, gangrena, úlcera arterial, pé diabético complicado, TVP extensa, trauma vascular ou falha terapêutica.</p>
+        </div>
+      </div>
+
+      <div class="clinicalPearl danger">
+        Síntese prática. O erro mais grave não é errar o nome final da doença. O erro mais grave é não reconhecer gravidade, não examinar pulsos, não avaliar perfusão e atrasar o encaminhamento quando o membro está ameaçado.
+      </div>
+    </section>
+
+    <section id="atividade">
+      <h2 class="sectionTitle">9. Atividade de revisão em sala</h2>
+      <div class="twoColumns">
+        <div class="card decision">
+          <span class="tag tagOrange">Dinâmica</span>
+          <h3>Roteiro para discussão de imagens</h3>
+          <ol>
+            <li>Descreva a imagem sem diagnosticar.</li>
+            <li>Identifique a síndrome dominante.</li>
+            <li>Procure sinais de gravidade.</li>
+            <li>Defina o território principal.</li>
+            <li>Liste três diagnósticos diferenciais.</li>
+            <li>Escolha o diagnóstico mais provável.</li>
+            <li>Indique o primeiro exame ou primeira conduta.</li>
+          </ol>
+        </div>
+
+        <div class="card safe">
+          <span class="tag tagGreen">Perguntas fixas</span>
+          <h3>Use em todos os casos</h3>
+          <ol>
+            <li>O que ameaça a vida?</li>
+            <li>O que ameaça o membro?</li>
+            <li>Qual achado físico é decisivo?</li>
+            <li>Qual hipótese não posso perder?</li>
+            <li>Qual exame muda a conduta?</li>
+            <li>Quando encaminhar ao vascular?</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="heroQuestion safe">
+        <h2>O bom clínico não decora doenças.</h2>
+        <p>Ele reconhece padrões, exclui urgências, organiza probabilidades e toma decisões proporcionais ao risco clínico.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Material de apoio para aula de Cirurgia Vascular, quarto ano de Medicina. Página editável para inserção de imagens, casos clínicos e figuras didáticas.
+  </footer>
+
+  <script>
+    function toggleAnswer(id) {
+      const item = document.getElementById(id);
+      item.classList.toggle('visible');
+    }
+  </script>
+</body>
+</html>
